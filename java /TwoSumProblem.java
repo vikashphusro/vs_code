@@ -1,6 +1,8 @@
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class TwoSumProblem {
@@ -72,6 +74,29 @@ public class TwoSumProblem {
         return false;
     }
 
+    public int[] twoSum(int[] nums, int target) {
+        int [] arr = new int[2];
+        int requiereNumber = Integer.SIZE;
+        HashMap <Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            requiereNumber = target- nums[i];
+            if(map.containsValue(requiereNumber)){
+                arr[1] = i;
+                break;
+            }
+            map.put(i, nums[i]);
+        }
+
+        for(Map.Entry<Integer, Integer> entry: map.entrySet()){
+            if(entry.getValue() == requiereNumber){
+                arr[0] = entry.getKey();
+                break;
+            }
+        }
+    
+        return arr;
+    }
+
     public static void main(String[] args) {
         int [] num = {0, -1, 2, -3, 1};
         int target = -2;
@@ -88,6 +113,15 @@ public class TwoSumProblem {
         // Hashset solution
         boolean status2 = sumProblem.statusTwoSumProblem2(num, target);
         System.out.println("Two way sum status1 : " + status2);
+
+        // return indices in array format 
+        int arr [] = {3,2,4};
+
+        int arr2[] = sumProblem.twoSum(arr, 6);
+        for(int i : arr2){
+            System.out.println("indices : " + i);
+        }
+
 
     }
     
