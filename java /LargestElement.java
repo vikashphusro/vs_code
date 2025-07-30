@@ -5,7 +5,7 @@ import java.util.List;
 
 
 
-public class Bihara {
+public class LargestElement {
 
 
     private int secondLargestElement(int [] arr){
@@ -92,14 +92,14 @@ public class Bihara {
     public static void main(String[] args) {
        int [] arr = {2, 5, 1, 9, 33, 2, 66,444, 444, 444, 444,  33, 444, 33,33, 444, 3000, 3000};
        
-       Bihara bihara = new Bihara();
-       List<Integer> kk = bihara.getTopElement(arr);
+       LargestElement largestElement = new LargestElement();
+       List<Integer> kk = largestElement.getTopElement(arr);
 
        for(int n : kk){
         System.out.println(n);
        }
 
-       int secondLargest = bihara.secondLargestElement2(arr);
+       int secondLargest = largestElement.secondLargestElement2(arr);
        System.out.println("Second Lasrgest : " + secondLargest);
 
 
